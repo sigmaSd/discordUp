@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    "name": "DiscordUp",
+    "version": "1.0",
+    "description": "Hide/Show discord sidebars",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.discord.com/*"
+            ],
+            "js": [
+                "discord.js"
+            ]
+        }
+    ]
+}
