@@ -13,14 +13,12 @@ function DOMRegex(regex, elements) {
 function main() {
     const f = () => {
         const allElements = document.querySelectorAll('*')
-        if (DOMRegex(/toolbar/, allElements).length === 0) {
+        if (DOMRegex(/sidebar/, allElements).length === 0) {
             setTimeout(f, 3000);
             return
         }
 
-        const toolbard = DOMRegex(/toolbar/, allElements)[0]
         const sidebar = DOMRegex(/sidebar/, allElements)[0]
-        const membersbar = DOMRegex(/membersWrap/, allElements)[0].parentNode
 
         const lBtn = document.createElement("button");
         lBtn.innerText = "L";
@@ -32,18 +30,10 @@ function main() {
                 sidebar.style.visibility = ""
             }
         });
-        const rBtn = document.createElement("button");
-        rBtn.innerText = "R";
-        rBtn.addEventListener("click", () => {
-            const vis = membersbar.style.visibility
-            if (!vis) {
-                membersbar.style.visibility = "collapse"
-            } else {
-                membersbar.style.visibility = ""
-            }
-        });
-        toolbard.appendChild(lBtn);
-        toolbard.appendChild(rBtn);
+        lBtn.style.position = "absolute"
+        lBtn.style.top = "0px"
+        lBtn.style.left = "0px"
+        document.body.appendChild(lBtn)
     }
     f()
 }
