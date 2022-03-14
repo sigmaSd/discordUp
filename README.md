@@ -1,2 +1,2 @@
 # discordUp
-Firefox extension to hide/show discord side bar
+Firefox extension to hide/show discord side bars
